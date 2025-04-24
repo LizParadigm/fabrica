@@ -1,0 +1,86 @@
+.fondo {
+    background-image: url('/fondo-auth.jpg');
+    background-color: #58c9c01f;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    background-color: rgb(255 255 255);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 80%;
+    color: var(--font-color-4);
+    font-size: 30px;
+    font-weight: 600;
+    border-radius: 43px;
+    height: max-content;
+}
+
+.contenedor-logo {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.contenedor-logo-img {
+    margin-right: 8px;
+}
+
+.contenedor-logo-text {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.contenedor-form {
+    background-color: rgb(255 255 255);
+    padding: 1rem;
+    display: grid;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+}
+
+.contenedor-titulo {
+    font-weight: 700;
+    font-size: 60px;
+    max-width: 22rem;
+    text-align: right;
+    margin-bottom: 0.8rem;
+}
+
+.contenedor-input {
+    border-color: var(--font-color-4);
+    border-radius: 1.5rem;
+    border-width: 1px;
+    width: 95%;
+    /* max-width: 570px; */
+    height: 100%;
+    max-height: 57px;
+    margin-bottom: 3rem;
+}
+
+.contenedor-boton1 {
+    margin-right: auto;
+    margin-left: auto;
+    background: var(--font-color-4);
+    color: white;
+    width: 175px;
+    height: 63px;
+    border-radius: 77px;
+    border-style: none;
+    font-size: 25px;
+    font-weight: 600;
+}
