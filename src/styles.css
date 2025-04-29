@@ -31,3 +31,9 @@ body {
 * {
     font-family: 'Inter';
 }
+
+
+.formatoError {
+    color: #c80000;
+    font-size: x-small;
+}
