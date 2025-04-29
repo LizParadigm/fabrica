@@ -5,47 +5,69 @@
             <img src="hirolabIcon.jpg" alt="" class="contenedor-logo-img">
             <label class="contenedor-logo-text">Hiro Lab</label>
         </div>
-        <ul class="contenedor-form">
-            <li>
-                <label class="contenedor-titulo">Registrate</label>
-            </li>
-            <li>
-                <label>Nombre</label>
-                <input type="text" class="contenedor-input">
-            </li>
-            <li>
-                <label>Apellido Paterno</label>
-                <input type="text" class="contenedor-input">
-            </li>
-            <li>
-                <label>Apellido Materno</label>
-                <input type="text" class="contenedor-input">
-            </li>
-            <li>
-                <label>Numero De Telefono</label>
-                <input type="text" class="contenedor-input">
-            </li>
-            <li>
-                <label>Domicilio</label>
-                <input type="text" class="contenedor-input">
-            </li>
-            <li>
-                <label>Puesto</label>
-                <input type="text" class="contenedor-input">
-            </li>
-            <li>
-                <label>Area</label>
-                <input type="text" class="contenedor-input">
-            </li>
-            <li>
-                <label>Correo Electroonico</label>
-                <input type="text" class="contenedor-input">
-            </li>
-            <li>
-                <label>Contraseña</label>
-                <input type="text" class="contenedor-input">
-            </li>
-        </ul>
-        <button class="contenedor-boton1">Aceptar</button>
+        <form [formGroup]="formulario" (ngSubmit)="registrar()" class="contenedor-form">
+            <div class="contenedor-form-contenido">
+                <div>
+                    <label class="contenedor-titulo">Registrate</label>
+                </div>
+                <div>
+                    <label>Nombre<span class="formatoError"> {{errorNombre}}</span></label>
+                    <input type="text" id="inputNombre" formControlName="nombre" class="contenedor-input"
+                        [ngClass]="{'errorBorde': errorNombre}">
+                </div>
+                <div>
+                    <label>Apellido Paterno<span class="formatoError"> {{errorApellidoPaterno}}</span></label>
+                    <input type="text" id="inputApellidoPaterno" formControlName="apellidoPaterno"
+                        class="contenedor-input" [ngClass]="{'errorBorde': errorApellidoPaterno}">
+                </div>
+                <div>
+                    <label>Apellido Materno<span class="formatoError"> {{errorApellidoMaterno}}</span></label>
+                    <input type="text" id="inputApellidoMaterno" formControlName="apellidoMaterno"
+                        class="contenedor-input" [ngClass]="{'errorBorde': errorApellidoMaterno}">
+                </div>
+                <div>
+                    <label>Numero De Telefono<span class="formatoError"> {{errorTelefono}}</span></label>
+                    <input type="text" id="inputTelefono" formControlName="telefono" (keypress)="numeros($event)"
+                        class="contenedor-input" [ngClass]="{'errorBorde': errorTelefono}">
+                </div>
+                <div>
+                    <label>Domicilio<span class="formatoError"> {{errorDomicilio}}</span></label>
+                    <input type="text" id="domicilio" formControlName="domicilio" class="contenedor-input"
+                        [ngClass]="{'errorBorde': errorDomicilio}">
+                </div>
+                <div>
+                    <label>Puesto<span class="formatoError"> {{errorPuesto}}</span></label>
+                    <select id="campoPuesto" formControlName="puesto" class="contenedor-input"
+                        [ngClass]="{'errorBorde': errorPuesto}">
+                        <option value="" disabled selecte>Selecciona un puesto</option>
+                        <option value="Activo">Activo</option>
+                        <option value="Pasivo">Pasivo</option>
+                        <option value="Versatil">Versatil</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Area<span class="formatoError"> {{errorArea}}</span></label>
+                    <select id="campoArea" formControlName1="area" class="contenedor-input"
+                        [ngClass]="{'errorBorde': errorArea}">
+                        <option value="">Selecciona el area</option>
+                        <option value="Aire">Aire</option>
+                        <option value="Electricidad">Electricidad</option>
+                        <option value="Agua">Agua</option>
+                        <option value="Sonido">Sonido</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Correo Electroonico<span class="formatoError"> {{errorCorreo}}</span></label>
+                    <input type="text" id="Correo" formControlName="correo" class="contenedor-input"
+                        [ngClass]="{'errorBorde': errorCorreo}">
+                </div>
+                <div>
+                    <label>Contraseña<span class="formatoError"> {{errorContrasena}}</span></label>
+                    <input type="password" id="contrasena" formControlName="contrasena" class="contenedor-input"
+                        [ngClass]="{'errorBorde': errorContrasena}">
+                </div>
+            </div>
+            <button class="contenedor-boton1" type="submit">Aceptar</button>
+        </form>
     </div>
 </div>
