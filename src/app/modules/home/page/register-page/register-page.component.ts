@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AuthService } from '../../../../shared/services/auth.service';
+import { AuthService } from '../../../../shared/services/auth/auth.service';
 import { MensajeErrorService } from '../../../../shared/services/mensajeError/mensaje-error.service';
 import { CommonModule } from '@angular/common';
 
@@ -88,7 +88,6 @@ export class RegisterPageComponent implements OnInit {
     });
   }
 
-
   registrar() {
     this.mensajesError();
 
@@ -97,6 +96,7 @@ export class RegisterPageComponent implements OnInit {
 
     }
   };
+
 
   mensajesError() {
     this.errorNombre = this.errores.registrarNombre(this.formulario.get('nombre'));

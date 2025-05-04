@@ -115,5 +115,29 @@ export class MensajeErrorService {
     }
   }
 
+  // iniciar sesion
+  iniciarCorreo(correo: AbstractControl | null): string {
+    if (!correo) return '';
 
+    if (correo.hasError('required')) {
+      return 'Campo necesario.';
+    }
+    else if (correo.hasError('email')) {
+      return 'Correo invalido.';
+    }
+    else {
+      return '';
+    }
+  }
+
+  iniciarContrasena(contrasena: AbstractControl | null): string {
+    if (!contrasena) return '';
+
+    if (contrasena.hasError('required')) {
+      return 'Campo necesario.';
+    }
+    else {
+      return '';
+    }
+  }
 }

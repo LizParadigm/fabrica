@@ -1,0 +1,36 @@
+.header {
+    background: var(--font-color-4);
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    margin: 0px;
+    color: white;
+}
+
+
+.header-regresar {
+    display: q;
+}
+
+.header-encabezado {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.header-cerrar-sesion {
+    display: r;
+}
+
+.header-button {
+    width: 50px;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+}
+
+.header-button:hover {
+    background-color: var(--font-color-3);
+    border-radius: 14px;
+}

@@ -1,0 +1,17 @@
+<nav class="header">
+    <ng-container class="header-regresar" *ngTemplateOutlet="regresar"></ng-container>
+    <label class="header-encabezado">{{encabezado}}</label>
+    <ng-container class="header-cerrar-sesion" *ngTemplateOutlet="cerrarSesion"></ng-container>
+</nav>
+
+<ng-template #regresar>
+    <button *ngIf="!this.rut.enHome()" class="header-button buttonLimpio" (click)="atras()">
+        <img src="/iconos/arrow_back.png" alt="Regresar">
+    </button>
+</ng-template>
+
+<ng-template #cerrarSesion>
+    <button *ngIf="this.rut.visible()" class="header-button buttonLimpio" (click)="cerrarsesion()">
+        <img src=" /iconos/cerrar_sesion.png" alt="Cerrar sesion">
+    </button>
+</ng-template>
