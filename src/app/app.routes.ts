@@ -3,7 +3,7 @@ import { HomePageComponent } from './modules/home/page/home-page/home-page.compo
 
 export const routes: Routes = [
     {
-        path: 'iniciar-sesion',
+        path: '',
         loadChildren: () => import('./modules/auth/auth.routes').then(module => module.AUTH_ROUTES)
     },
     {

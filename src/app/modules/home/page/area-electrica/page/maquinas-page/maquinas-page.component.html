@@ -1,0 +1,35 @@
+<div class="entradas">
+    <table class="tabla">
+        <thead class="tabla-encabezado">
+            <tr class="tabla-encabezado-fila">
+                <th class="ajuste">Voltaje Promedio</th>
+                <th class="ajuste">Estado</th>
+                <th class="ajuste">Fecha</th>
+                <th class="ajuste">Hora</th>
+            </tr>
+        </thead>
+        <tbody class="tabla-cuerpo">
+            <tr *ngFor="let fila of datos; let i = index" [ngClass]="i % 2 === 0 ? 'verde' : 'gris'">
+                <td class="ajuste">{{ fila.voltajePromedio }}</td>
+                <td class="ajuste"
+                    [ngClass]="{'texto-verde': fila.estado.toLowerCase() === 'normal', 'texto-rojo': fila.estado.toLowerCase() ==='alerta'}">
+                    {{ fila.estado }}</td>
+                <td class="ajuste">{{ fila.date }}</td>
+                <td class="ajuste">{{ fila.time }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- <div class="contenedor">
+    <button *ngFor="let dato of datos; let i = index;" class="datos buttonLimpio" (click)="detalles(i)">
+        <div class="datos-encabezado">
+            <label class="datos-encabezado-nombre">{{dato.nombre}}</label>
+        </div>
+        <div class="datos-estado">
+            <label class="datos-estado-texto">Estado: {{dato.estado}}</label>
+            <img [src]="'iconos/circulo' + dato.estado + '.png'" alt="soy un icono :)" class="datos-icono utileriaR">
+        </div>
+        <img src="iconos/robot.png" alt="soy un icono :)" class="datos-icono utileriaL">
+    </button>
+</div> -->

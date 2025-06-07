@@ -1,11 +1,12 @@
-<nav class="header">
+<nav class="header" [ngClass]="{'ocultar1':oculto}">
     <ng-container class="header-regresar" *ngTemplateOutlet="regresar"></ng-container>
     <label class="header-encabezado">{{encabezado}}</label>
     <ng-container class="header-cerrar-sesion" *ngTemplateOutlet="cerrarSesion"></ng-container>
 </nav>
 
 <ng-template #regresar>
-    <button *ngIf="!this.rut.enHome()" class="header-button buttonLimpio" (click)="atras()">
+    <button *ngIf="!this.rut.enHome()" class="header-button buttonLimpio" (click)="atras()"
+        [ngClass]="{'ocultar2':oculto}">
         <img src="/iconos/arrow_back.png" alt="Regresar">
     </button>
 </ng-template>

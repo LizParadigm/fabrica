@@ -20,9 +20,20 @@ export class AreasPageComponent implements OnInit {
   registrar() {
     this.router.navigateByUrl('home/registrar-usuario');
   }
+  areaHidraulica(): void {
+    this.router.navigateByUrl('home/zona-hidraulica');
+  }
 
-  verAreas() {
-    this.router.navigateByUrl('home/areas');
+  areaDecibeles(): void {
+    this.router.navigateByUrl('home/monitoreo-de-decibeles');
+  }
+
+  areaElectrica(): void {
+    this.router.navigateByUrl('home/zona-electrica');
+  }
+
+  areaAire(): void {
+    this.router.navigateByUrl('home/calidad-del-aire');
   }
 
 }

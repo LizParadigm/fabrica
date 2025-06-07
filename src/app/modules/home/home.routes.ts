@@ -16,6 +16,22 @@ export const HOME_ROUTES: Routes = [
     {
         path: 'areas',
         component: AreasPageComponent
-    }
+    },
+    {
+        path: 'zona-hidraulica',
+        loadChildren: () => import('./page/area-hidraulica/area-hidraulica.routes').then(module => module.HIDRAULICA_ROUTES)
+    },
+    {
+        path: 'monitoreo-de-decibeles',
+        loadChildren: () => import('./page/area-decibeles/area-decibeles.routes').then(module => module.DECIBELES_ROUTES)
+    },
+    {
+        path: 'zona-electrica',
+        loadChildren: () => import('./page/area-electrica/area-electrica.routes').then(module => module.ELECTRICIAD_ROUTES)
+    },
+    // {
+    //     path: 'calidad-del-aire',
+    //     component: AirePageComponent
+    // }
 
 ]

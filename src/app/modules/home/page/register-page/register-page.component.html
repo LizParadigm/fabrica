@@ -47,7 +47,7 @@
                 </div>
                 <div>
                     <label>Area<span class="formatoError"> {{errorArea}}</span></label>
-                    <select id="campoArea" formControlName1="area" class="contenedor-input"
+                    <select id="campoArea" formControlName="area" class="contenedor-input"
                         [ngClass]="{'errorBorde': errorArea}">
                         <option value="">Selecciona el area</option>
                         <option value="Aire">Aire</option>
@@ -71,3 +71,5 @@
         </form>
     </div>
 </div>
+
+<app-pop-ups *ngIf="cargarModal" (cerrar)="cerrarModal()" [mensaje]="modalMensaje"></app-pop-ups>

@@ -15,6 +15,7 @@ import { Location } from '@angular/common';
 export class HeaderComponent implements OnInit {
   // atributos
   encabezado!: string;
+  oculto: boolean = false;
 
   constructor(
     private router: Router,
@@ -24,8 +25,10 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.encabezado = this.rut.headerEncabezado();
+        this.oculto = this.rut.headerRegister();
       }
     });
+
   }
 
   ngOnInit(): void {
@@ -37,6 +40,6 @@ export class HeaderComponent implements OnInit {
   };
 
   cerrarsesion() {
-    this.router.navigateByUrl('/iniciar-sesion')
+    this.router.navigateByUrl('/')
   };
 }

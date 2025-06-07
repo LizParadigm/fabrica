@@ -1,0 +1,31 @@
+<div class="dispositivos">
+    <table class="tabla">
+        <thead class="tabla-encabezado">
+            <tr class="tabla-encabezado-fila">
+                <th>Dispositivo</th>
+                <th class="ajuste">Trabajador</th>
+                <th class="ajuste">Microfono</th>
+                <th class="ajuste">Localizador</th>
+                <th class="ajuste">Estado</th>
+                <th class="ajuste">Realizar Prueba</th>
+            </tr>
+        </thead>
+        <tbody class="tabla-cuerpo">
+            <tr *ngFor="let fila of datos; let i = index" [ngClass]="i % 2 === 0 ? 'verde' : 'gris'">
+                <td class="ajuste">{{ fila.dispositivo }}</td>
+                <td class="ajuste">{{ fila.trabajador}}</td>
+                <td class="ajuste"
+                    [ngClass]="{'texto-verde': fila.microfono===true, 'texto-rojo': fila.microfono===false}">{{
+                    fila.microfono ? 'Funcional' : 'Error' }}</td>
+                <td class="ajuste"
+                    [ngClass]="{'texto-verde': fila.localizador===true, 'texto-rojo': fila.localizador===false}">
+                    {{ fila.localizador ? 'Funcional' : 'Error' }}</td>
+                <td class="ajuste" [ngClass]="{'texto-verde': fila.estado===true, 'texto-rojo': fila.estado===false}">{{
+                    fila.estado ? 'Funcional' : 'Error' }}</td>
+                <td class="ajuste"><button class="button-prueba buttonLimpio"
+                        (click)="realizarPrueba(fila.dispositivo)"><img src="iconos/prueba.png" alt="Realizar prueba"
+                            style="border-radius: 85px;"></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

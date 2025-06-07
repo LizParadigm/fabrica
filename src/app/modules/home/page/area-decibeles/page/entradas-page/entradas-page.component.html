@@ -1,0 +1,24 @@
+<div class="entradas">
+    <table class="tabla">
+        <thead class="tabla-encabezado">
+            <tr class="tabla-encabezado-fila">
+                <th>Trabajador</th>
+                <th class="ajuste">Ubicacion</th>
+                <th class="ajuste">Decibeles</th>
+                <th class="ajuste">dB Promedio en la Ubicacion</th>
+                <th class="ajuste">Estado</th>
+            </tr>
+        </thead>
+        <tbody class="tabla-cuerpo">
+            <tr *ngFor="let fila of datos; let i = index" [ngClass]="i % 2 === 0 ? 'verde' : 'gris'">
+                <td>{{ fila.trabajador }}</td>
+                <td class="ajuste">{{ fila.ubicacion }}</td>
+                <td class="ajuste">{{ fila.db }}</td>
+                <td class="ajuste">{{ fila.dbPromedioUbicacion }}</td>
+                <td class="ajuste"
+                    [ngClass]="{'texto-verde': fila.estado.toLowerCase() === 'seguro', 'texto-rojo': fila.estado.toLowerCase() ==='alerta'}">
+                    {{ fila.estado }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

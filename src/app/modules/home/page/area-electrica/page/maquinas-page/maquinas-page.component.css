@@ -1,0 +1,119 @@
+.entradas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 60px 30px;
+    /* height: 78vh; */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.tabla {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.tabla-encabezado {
+    background: #e1e1e1;
+    font-size: 30px;
+}
+
+.tabla-encabezado-fila {
+    display: d;
+}
+
+.tabla-cuerpo {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.gris {
+    background: #e1e1e1;
+}
+
+.verde {
+    background: #3D7C77
+}
+
+.ajuste {
+    text-align: center;
+}
+
+td {
+    padding: 10px;
+}
+
+.texto-verde {
+    color: #2bb700;
+    font-weight: 900;
+}
+
+.texto-amarillo {
+    color: #c7c500;
+    font-weight: 900;
+}
+
+.texto-rojo {
+    color: #c40f00;
+    font-weight: 900;
+}
+
+/* .contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.datos {
+    position: relative;
+    display: flex;
+    background: #E1E1E1;
+    border-radius: 24px;
+    width: 504px;
+    height: 191px;
+    margin: 80px;
+    padding: 9px;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.datos-encabezado {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+}
+
+.datos-encabezado-nombre {
+    font-weight: bold;
+}
+
+.datos-estado {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.datos-estado-texto {
+    font-size: 36px;
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.datos-icono {
+    position: absolute;
+    bottom: 10px;
+    z-index: 10;
+}
+
+.utileriaL {
+    left: 10px;
+}
+
+.utileriaR {
+    right: 10px;
+    width: 55px;
+} */

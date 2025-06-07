@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { AuthService } from '../../../../shared/services/auth/auth.service';
 import { MensajeErrorService } from '../../../../shared/services/mensajeError/mensaje-error.service';
 import { CommonModule } from '@angular/common';
+import { PopUpsComponent } from './components/pop-ups/pop-ups.component';
 
 @Component({
   selector: 'app-register-page',
@@ -10,7 +11,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    PopUpsComponent
   ],
   templateUrl: './register-page.component.html',
   styleUrl: './register-page.component.css'
@@ -30,6 +32,9 @@ export class RegisterPageComponent implements OnInit {
   buttonAccesible: boolean = true;
 
   formulario!: FormGroup;
+
+  cargarModal: boolean = false;
+  modalMensaje!: [string, boolean];
 
   constructor(
     private fb: FormBuilder,
@@ -90,15 +95,17 @@ export class RegisterPageComponent implements OnInit {
 
   registrar() {
     this.mensajesError();
-
     if (this.formulario.valid) {
       // falta validacion de correo existente o no y ya se procede a enviar el this.formulario al back con el api
-
+      this.abrirModal('Usuario Registrado', false);
+    }
+    else {
+      this.abrirModal('error al registrar', true);
     }
   };
 
 
-  mensajesError() {
+  mensajesError(): void {
     this.errorNombre = this.errores.registrarNombre(this.formulario.get('nombre'));
     this.errorApellidoPaterno = this.errores.registrarApellido(this.formulario.get('apellidoPaterno'));
     this.errorApellidoMaterno = this.errores.registrarApellido(this.formulario.get('apellidoMaterno'));
@@ -115,5 +122,15 @@ export class RegisterPageComponent implements OnInit {
     if (char < 48 || char > 57) {
       event.preventDefault();
     }
+  }
+
+  abrirModal(mensaje: string, correcto: boolean): void {
+    this.cargarModal = true;
+    this.modalMensaje = [mensaje, correcto];
+
+  }
+
+  cerrarModal(): void {
+    this.cargarModal = false;
   }
 }
