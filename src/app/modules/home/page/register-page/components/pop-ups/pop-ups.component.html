@@ -1,0 +1,7 @@
+<!-- pop-ups.component.html -->
+<div class="modal-backdrop">
+    <div class="modal-content" [ngClass]="{'textError':mensaje[1]}">
+        <p>{{mensaje[0]}}</p>
+        <button (click)="cerrarVentana()">Cerrar</button>
+    </div>
+</div>

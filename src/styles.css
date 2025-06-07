@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-comun-1: #073763;
+    --color-comun-2: #333333;
+    --color-comun-3: #ffffff7c;
+    --color-filtro-modal: rgba(0, 0, 0, 0.5);
+    --color-botton-1: #b50000;
+    --color-botton-2: #358500dc;
+    --color-botton-3: white;
+    --border-0: none;
+    --border-1: 1px solid #000;
+    --border-2: 2px solid #000;
+    --border-3: 3px solid #000;
+    --border-botton-1: .1px solid #000;
+    --font-color-1: white;
+    --font-color-2: black;
+    --font-color-3: #022422;
+    --font-color-4: #09655D;
+    --font-color-5: #58C9C0;
+    --font-color-7: #fff6a4;
+    --font-color-8: #383200;
+    --background-color-1: #327d0047;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    font-family: 'Inter';
+}
+
+
+.formatoError {
+    color: #c80000;
+    font-size: x-small;
+}
+
+.errorBorde {
+    border: 1px solid red;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.buttonLimpio {
+    display: flex;
+    background: none;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}

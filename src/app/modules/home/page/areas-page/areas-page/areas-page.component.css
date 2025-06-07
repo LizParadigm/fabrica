@@ -1,0 +1,28 @@
+.areas-button {
+    display: flex;
+    background: var(--font-color-4);
+    border-radius: 24px;
+    width: 480px;
+    height: 216px;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-size: 45px;
+    margin: 80px;
+}
+
+.areas-button-texto {
+    max-width: 346px;
+    text-align: left;
+    width: 244px;
+}
+
+.areas-button:hover {
+    background-color: var(--font-color-3);
+}
+
+.areas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

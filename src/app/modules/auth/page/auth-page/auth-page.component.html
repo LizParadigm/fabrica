@@ -1,0 +1,19 @@
+<!-- auth-page.component.html -->
+<div class="fondo">
+    <div class="contenedor">
+        <div class="contenedor-logo">
+            <img src="hirolabIcon.jpg" alt="" class="contenedor-logo-img">
+            <label class="contenedor-logo-text">Hiro Lab</label>
+        </div>
+        <form [formGroup]="formulario" (ngSubmit)="entrar()" class="contenedor-form">
+            <label class="contenedor-form-titulo">Te damos la bienvenida a Hiro Lab</label>
+            <label><span class="formatoError">{{errorCorreo}} </span>Correo electrónico</label>
+            <input type="text" id="inputCorreo" formControlName="correo" [ngClass]="{'errorBorde': errorCorreo}"
+                class="contenedor-form-input">
+            <label><span class="formatoError">{{errorContrasena}} </span>Contraseña</label>
+            <input type="password" id="inputContrasena" formControlName="contrasena" class="contenedor-form-input"
+                [ngClass]="{'errorBorde': errorContrasena}">
+            <button type="submit" class="contenedor-form-boton1">Aceptar</button>
+        </form>
+    </div>
+</div>

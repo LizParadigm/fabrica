@@ -1,0 +1,23 @@
+<div class="contenedor">
+    <div *ngFor="let dato of datos; let i = index;" class="datos"
+        [ngClass]="{'datos': true, 'utileria2': desplegar[i]}">
+        <div class="datos-encabezado">
+            <label class="datos-encabezado-nombre">{{dato.nombre}}</label>
+            <label>#{{dato.id}}</label>
+        </div>
+        <div class="datos-cuerpo">
+            <img src="iconos/barras1.png" alt="soy un icono :)">
+            <label class="datos-cuerpo-contenido">{{dato.contenido}}</label>
+        </div>
+        <div class="datos-estado">
+            <img [src]="'iconos/circulo' + dato.estado + '.png'" alt="soy un icono :)">
+            <label class="datos-estado-texto">Estado: {{dato.estado}}</label>
+        </div>
+        <button class="datos-button buttonLimpio" (click)="desplegarMenu(i)">Detalles</button>
+        <ul *ngIf="desplegar[i]" class="menu-desplegable">
+            <li (click)="abrir(dato.id)">Abrir llave</li>
+            <li class="utileria1" (click)="cerrar(dato.id)">Cerrar llave</li>
+            <li (click)="notificar(dato.id)">Notificar que llamen a la pipa</li>
+        </ul>
+    </div>
+</div>

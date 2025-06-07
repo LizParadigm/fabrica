@@ -1,0 +1,105 @@
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.datos {
+    position: relative;
+    display: flex;
+    background: #E1E1E1;
+    border-radius: 24px;
+    width: 504px;
+    height: 191px;
+    margin: 80px;
+    padding: 9px;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+}
+
+.datos-encabezado {
+    width: 86%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+}
+
+.datos-encabezado-nombre {
+    font-weight: bold;
+}
+
+.datos-cuerpo {
+    display: flex;
+    height: min-content;
+    align-items: baseline;
+    width: 95%;
+}
+
+.datos-cuerpo-contenido {
+    font-size: 60px;
+    font-weight: bold;
+    margin-left: 9px;
+}
+
+.datos-estado {
+    display: flex;
+    align-items: center;
+    width: 96%;
+}
+
+.datos-estado-texto {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.datos-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+    padding: 10px 45px;
+    /* font-weight: bold; */
+    border-radius: 77px;
+    background-color: #000000;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 25px;
+}
+
+.datos-button:hover {
+    background-color: #828282;
+}
+
+.menu-desplegable {
+    position: absolute;
+    bottom: -168px;
+    background-color: #09655d;
+    border-radius: 0px 0px 12px 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    padding: 10px 5px;
+    width: -webkit-fill-available;
+    list-style: none;
+    font-size: 25px;
+    color: white;
+}
+
+.menu-desplegable li {
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.menu-desplegable li:hover {
+    background: #064742;
+}
+
+.utileria1 {
+    margin: 1px 0px;
+}
+
+.utileria2 {
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}

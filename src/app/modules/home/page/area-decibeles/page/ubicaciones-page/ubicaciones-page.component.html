@@ -1,0 +1,22 @@
+<div class="ubicaciones">
+    <table class="tabla">
+        <thead class="tabla-encabezado">
+            <tr class="tabla-encabezado-fila">
+                <th>Ubicacion</th>
+                <th class="ajuste">Promedio de dB en la Ubicacion</th>
+                <th class="ajuste">Nivel de Peligro</th>
+                <th class="ajuste">Uso de Proteccion</th>
+            </tr>
+        </thead>
+        <tbody class="tabla-cuerpo">
+            <tr *ngFor="let fila of datos; let i = index" [ngClass]="i % 2 === 0 ? 'verde' : 'gris'">
+                <td>{{ fila.area }}</td>
+                <td class="ajuste">{{ fila.db }}</td>
+                <td class="ajuste"
+                    [ngClass]="{'texto-rojo': fila.peligro.toLowerCase() === 'alto', 'texto-amarillo': fila.peligro.toLowerCase() === 'medio', 'texto-verde': fila.peligro.toLowerCase()=== 'bajo'}">
+                    {{ fila.peligro }}</td>
+                <td class="ajuste"> {{fila.proteccion}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
