@@ -16,6 +16,11 @@
                         [ngClass]="{'errorBorde': errorNombre}">
                 </div>
                 <div>
+                    <label>username<span class="formatoError"> {{errorNombre}}</span></label>
+                    <input type="text" id="inputUsername" formControlName="username" class="contenedor-input"
+                        [ngClass]="{'errorBorde': errorNombre}">
+                </div>
+                <div>
                     <label>Apellido Paterno<span class="formatoError"> {{errorApellidoPaterno}}</span></label>
                     <input type="text" id="inputApellidoPaterno" formControlName="apellidoPaterno"
                         class="contenedor-input" [ngClass]="{'errorBorde': errorApellidoPaterno}">
