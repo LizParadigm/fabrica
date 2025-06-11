@@ -7,8 +7,8 @@
         </div>
         <form [formGroup]="formulario" (ngSubmit)="entrar()" class="contenedor-form">
             <label class="contenedor-form-titulo">Te damos la bienvenida a Hiro Lab</label>
-            <label><span class="formatoError">{{errorCorreo}} </span>Correo electrónico</label>
-            <input type="text" id="inputCorreo" formControlName="correo" [ngClass]="{'errorBorde': errorCorreo}"
+            <label><span class="formatoError">{{errorUsername}} </span>Nombre de Usuario</label>
+            <input type="text" id="inputUsername" formControlName="username" [ngClass]="{'errorBorde': errorUsername}"
                 class="contenedor-form-input">
             <label><span class="formatoError">{{errorContrasena}} </span>Contraseña</label>
             <input type="password" id="inputContrasena" formControlName="contrasena" class="contenedor-form-input"

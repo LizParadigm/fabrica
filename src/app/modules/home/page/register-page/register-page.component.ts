@@ -4,6 +4,8 @@ import { AuthService } from '../../../../shared/services/auth/auth.service';
 import { MensajeErrorService } from '../../../../shared/services/mensajeError/mensaje-error.service';
 import { CommonModule } from '@angular/common';
 import { PopUpsComponent } from './components/pop-ups/pop-ups.component';
+import { Empleado } from '../../../../core/models/registrarUsuario.model';
+import { ApiService } from '../../../../shared/services/api/api.service';
 
 @Component({
   selector: 'app-register-page',
@@ -38,13 +40,16 @@ export class RegisterPageComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private authservice: AuthService,
+    private apiService: ApiService,
     private errores: MensajeErrorService
   ) {
   };
 
   ngOnInit(): void {
     this.formulario = this.fb.group({
+      username: ['', [
+        Validators.required
+      ]],
       nombre: ['', [
         Validators.required,
         Validators.pattern(/^[a-zA-Z\s]+$/),
@@ -96,8 +101,8 @@ export class RegisterPageComponent implements OnInit {
   registrar() {
     this.mensajesError();
     if (this.formulario.valid) {
+      this.registrando();
       // falta validacion de correo existente o no y ya se procede a enviar el this.formulario al back con el api
-      this.abrirModal('Usuario Registrado', false);
     }
     else {
       this.abrirModal('error al registrar', true);
@@ -123,6 +128,12 @@ export class RegisterPageComponent implements OnInit {
       event.preventDefault();
     }
   }
+  bloquearEspacio(event: KeyboardEvent): void {
+    if (event.key === ' ') {
+      event.preventDefault();
+    }
+  }
+
 
   abrirModal(mensaje: string, correcto: boolean): void {
     this.cargarModal = true;
@@ -133,4 +144,39 @@ export class RegisterPageComponent implements OnInit {
   cerrarModal(): void {
     this.cargarModal = false;
   }
+
+  registrando(): void {
+    const datos: Empleado = {
+      user: {
+        username: this.formulario.get('username')?.value,
+        password: this.formulario.get('contrasena')?.value,
+        email: this.formulario.get('correo')?.value,
+      },
+      nombre: this.formulario.get('nombre')?.value,
+      apellido_pat: this.formulario.get('apellidoPaterno')?.value,
+      apellido_mat: this.formulario.get('apellidoMaterno')?.value,
+      telefono: this.formulario.get('telefono')?.value,
+      direccion: this.formulario.get('domicilio')?.value,
+      puesto: this.formulario.get('puesto')?.value,
+      area: this.formulario.get('area')?.value
+    }
+    console.log('datos: ', datos)
+    console.log('formulario', this.formulario.value)
+
+    this.apiService.crearEmpleado(datos).subscribe({
+      next: res => {
+        this.abrirModal('Usuario Registrado', false);
+      },
+      error: err => {
+        console.error('err', err);
+        console.error('err.error', err.error);
+        console.error('err.mensaje', err.mensaje);
+        console.error('Mensaje del backend:', JSON.stringify(err.error, null, 2));
+        this.abrirModal('error al registrar', true);
+      }
+    });
+    console.log(datos)
+
+  }
 }
+
